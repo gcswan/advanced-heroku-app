@@ -11,8 +11,8 @@ import articleRoutes from "./routes/blog/ArticleRoutes";
 
 mongoose.set("debug", true);
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://jwoo:jwoo@ds151451.mlab.com:51451/aca-test");
-
+// mongoose.connect("mongodb://jwoo:jwoo@ds151451.mlab.com:51451/aca-test");
+mongoose.connect("mongodb://greg.swan:Radiohead1`@ds159866.mlab.com:59866/movie-journal")
 const app = express();
 app.use(express.static("public"));
 
