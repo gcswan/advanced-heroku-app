@@ -4,9 +4,7 @@ import SearchResultList from "../components/SearchResultList"
 
 
 class MainSearch extends Component {
-    constructor(){
-        super()
-    }
+    
 
     render() {
 

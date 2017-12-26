@@ -1,19 +1,17 @@
 import React, { Component } from "react-redux";
-import MainSearch from "./MainSearch"
+import MainSearchContainer from "../containers/MainSearchContainer"
+import SideBarContainer from "../containers/SideBarContainer"
 
 
 class Main extends Component {
-    constructor(){
-        super();
-    }
-
-    render() {
+    render(){
         return (
             <div>
-                <MainSearch />
+                <SideBarContainer />
+                <MainSearchContainer />
             </div>
         )
-    }
-}
+    };
+};
 
 export default Main;
