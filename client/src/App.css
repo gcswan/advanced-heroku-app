@@ -22,3 +22,34 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.title-list {
+ display: flex;
+ flex-direction: row;
+ justify-content: space-between;
+}
+
+.search-item {
+  border: 1px solid black;
+  height: 400px;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: black;
+  align-items: center;
+}
+.movie-poster{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid black;
+  height: 100px;
+  width: 150px;
+}
+.write-button {
+  height: 75px;
+  width: 150px;
+  background-color:green;
+  color: white;
+}

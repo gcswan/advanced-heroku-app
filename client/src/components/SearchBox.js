@@ -10,8 +10,8 @@ class SearchBox extends Component {
     }
     handleSubmit(e){
         e.preventDefault();
-        console.log(this.state);
-        console.log("SearchBox Props: ", this.props)
+        let searchTerm = this.state.searchTerm
+        this.props.loadSearch(searchTerm);
 
     }
     render() {

@@ -9,7 +9,11 @@ function searchResults(state = [], action){
 
 function myMovieList(state = [], action){
     if(action.type === "MY_MOVIES_LOADED"){
-        return action.value;
+        console.log("myMovieList reducer function logging what was recieved: ", action.value)
+        return [
+            ...state,
+            action.value
+        ]
     }
     return state;
 }

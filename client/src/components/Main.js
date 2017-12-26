@@ -1,19 +1,19 @@
-import React, { Component } from "react";
-import SearchBoxContainer from "./SearchBox";
+import React, { Component } from "react-redux";
+import MainSearch from "./MainSearch"
 
 
 class Main extends Component {
-  
+    constructor(){
+        super();
+    }
 
     render() {
-
         return (
             <div>
-                <SearchBoxContainer />
+                <MainSearch />
             </div>
         )
-        
-    };
-};
+    }
+}
 
 export default Main;

@@ -11,12 +11,20 @@ export function loadSearch(searchTerm) {
         .then(response => response.json())
         .then(movies => dispatch(searchLoaded(movies)))
         .catch(error => console.log(error))
-    }
-}
+    };
+};
 
 export function searchLoaded(movies){
     return {
         type: "SEARCH_RESULTS_LOADED",
         value: movies.results
-    }
+    };
+};
+
+export function saveMovie(movie){
+    console.log("saveMovie was called with the movie: ", movie)
+    return {
+        type: "MY_MOVIES_LOADED",
+        value: movie
+    };
 }
