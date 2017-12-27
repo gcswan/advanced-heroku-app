@@ -4,7 +4,7 @@ import "./App.css";
 import SignUpSignIn from "./SignUpSignIn";
 import TopNavbar from "./TopNavbar";
 import Secret from "./Secret";
-import Main from "./components/Main";
+import MainSearchContainer from "./containers/MainSearchContainer";
 
 
 
@@ -106,7 +106,7 @@ class App extends Component {
     return (
       <div>
         <Switch>
-          <Route exact path="/" component={Main} />
+          <Route exact path="/" component={MainSearchContainer} />
           <Route exact path="/secret" component={Secret} />
           <Route render={() => <h1>NOT FOUND!</h1>} />
         </Switch>
