@@ -17,7 +17,7 @@ class SearchBox extends Component {
     render() {
         
         return(
-            <div className="search-box">
+            <div>
                 <form onSubmit={this.handleSubmit.bind(this)}>
                     <input className="search-input" onChange={(e)=>{
                         this.setState({

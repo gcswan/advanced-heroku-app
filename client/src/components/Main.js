@@ -7,7 +7,7 @@ class Main extends Component {
     render(){
         return (
             <div className="main-container">
-                <SideBarContainer className="side-bar-container" />
+                <SideBarContainer />
                 <MainSearchContainer />
             </div>
         )
