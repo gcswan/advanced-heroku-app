@@ -9,9 +9,9 @@ class MainSearch extends Component {
     render() {
 
         return (
-            <div>
-                <SearchBoxContainer />
-                <SearchResultList searchResults={this.props.searchResults} />
+            <div className="main-search-container">
+                <SearchBoxContainer className="search-box" />
+                <SearchResultList className="title-list" searchResults={this.props.searchResults} />
             </div>
         )
         

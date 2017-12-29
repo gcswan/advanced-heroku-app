@@ -51,7 +51,7 @@
     "passport-jwt": "^2.2.1",
     "passport-local": "^1.0.0",
     "prop-types": "^15.5.10",
-    "react": "^15.5.4",
+    "react": "15.6.2",
     "react-bootstrap": "^0.31.0",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.6",

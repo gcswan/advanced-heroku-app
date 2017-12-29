@@ -1,5 +1,10 @@
+
 .App {
   text-align: center;
+  height:100%;
+  width:100%;
+  margin:0;
+  padding:0;
 }
 
 .App-logo {
@@ -10,8 +15,8 @@
 .App-header {
   background-color: #222;
   height: 150px;
-  padding: 20px;
   color: white;
+
 }
 
 .App-intro {
@@ -26,30 +31,87 @@
 .title-list {
  display: flex;
  flex-direction: row;
- justify-content: space-between;
+ justify-content: center;
+ align-items: center;
+ width: 100%;
+ height: 80%;
 }
 
 .search-item {
-  border: 1px solid black;
-  height: 400px;
-  width: 600px;
+ 
+  height: 75%;
+  width: 20%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   color: black;
   align-items: center;
+  border-left: 1px solid black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
 }
 .movie-poster{
   display: flex;
   flex-direction: column;
   justify-content: center;
   border: 1px solid black;
-  height: 100px;
-  width: 150px;
+  height: 35%;
+  width: 100%;
 }
 .write-button {
-  height: 75px;
-  width: 150px;
+  height: 35px;
+  width: 75%;
   background-color:green;
   color: white;
+}
+
+.main-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  
+
+}
+
+.side-bar-container {
+  border: 1px solid black;
+  width: 20%;
+  height: 100%;
+  background-color:#222;
+  color: white;
+  font-size: large;
+  text-align: left;
+}
+
+.main-search-container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 100%;
+  
+}
+
+.search-box {
+  height: 20%;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.search-input {
+ width: 50%;
+ height: 35px;
+ margin: 25px;
+ text-align: center;
+ font-size: 24px;
+ border: 2px solid black;
+}
+
+.search-button {
+  width: 15%;
+  height: 35px;
+  font-size: 20px;
+  background-color: green;
+  color: white;
+
+
 }

@@ -1,9 +1,17 @@
 import React, { Component } from "react";
 
-function SideBar(){
-    return (
-        <div>Something</div>
-    )
+class SideBar extends Component {
+    
+    render(){
+        console.log(this.props)
+        return (
+            <div className="side-bar-container">
+                
+                Something
+
+            </div>
+        )  
+    }
 }
 
 

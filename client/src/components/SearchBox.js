@@ -17,14 +17,14 @@ class SearchBox extends Component {
     render() {
         
         return(
-            <div>
+            <div className="search-box">
                 <form onSubmit={this.handleSubmit.bind(this)}>
-                    <input onChange={(e)=>{
+                    <input className="search-input" onChange={(e)=>{
                         this.setState({
                             searchTerm: e.target.value
                         })
                     }} placeholder="Search For a Movie"/>
-                    <button>Search</button>
+                    <button className="search-button">Search</button>
                 </form>
             </div>
         )
