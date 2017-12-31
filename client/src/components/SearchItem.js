@@ -24,17 +24,18 @@ class SearchItem extends Component {
             }
             return <img alt="not-available" className="movie-poster" src="https://d2cmub9v8qb8gq.cloudfront.net/0.17.0/static/img/no-image-available.jpg"></img>
         }  
-        console.log()
+        
         let movie = this.props.movie;
-        let movieId = this.props.
+        let movieId = this.props.movie.id
+        console.log("SearchItem logging movieID: ",movieId)
         return (
             <div className="search-item">
                 {image()}
                 <h6>TITLE: {this.props.movie.original_title}</h6>
                 <h6>RELEASE DATE: {this.props.movie.release_date}</h6>
                 <h6>RATING: {this.props.movie.vote_average}/10</h6>
-                <button onClick={this.handleClick.bind(this)} className="write-button">
-                    <Link to={"/create/"+}>Write About It</Link>
+                <button className="write-button">
+                    <Link to={"/create/" + movieId }>Write About It</Link>
                 </button>
             </div>
         );

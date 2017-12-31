@@ -1,5 +1,7 @@
 import { connect } from "react-redux";
 import SideBar from "../components/SideBar"
+import { loadEntries } from "../actions";
+
 
 
 function mapStateToProps(state){
@@ -7,8 +9,15 @@ function mapStateToProps(state){
         myMovieList: state.myMovieList
     };
 };
+function mapDispatchToProps(dispatch){
+    return {
+        loadEntries: function(){
+            dispatch(loadEntries())
+        }
+    }
+}
 
-export default connect(mapStateToProps)(SideBar);
+export default connect(mapStateToProps, mapDispatchToProps)(SideBar);
 
 
 

@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import CreatePost from "../components/CreatePost"
+import {createJournalEntry} from "../actions";
 
 
 function mapStateToProps(state){
@@ -7,5 +8,12 @@ function mapStateToProps(state){
         myMovieList: state.myMovieList
     };
 };
+function mapDispatchToProps(dispatch){
+    return {
+        createJournalEntry: function(entry){
+            dispatch(createJournalEntry(entry));
+        }
+    }
+}
 
-export default connect(mapStateToProps)(CreatePost);
+export default connect(mapStateToProps, mapDispatchToProps)(CreatePost);

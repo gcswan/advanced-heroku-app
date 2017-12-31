@@ -7,7 +7,7 @@ import mongoose from "mongoose";
 import passport from "passport";
 import authenticationRoutes from "./routes/AuthenticationRoutes";
 import listRoutes from "./routes/ListRoutes";
-import articleRoutes from "./routes/blog/ArticleRoutes";
+import movieRoutes from "./routes/MovieRoutes"
 
 mongoose.set("debug", true);
 mongoose.Promise = global.Promise;
@@ -16,17 +16,19 @@ mongoose.connect("mongodb://greg.swan:Radiohead1`@ds159866.mlab.com:59866/movie-
 const app = express();
 app.use(express.static("public"));
 
-app.get("*", (req, res, next) => {
-  res.sendFile("public/index.html");
-});
+// app.get("*", (req, res, next) => {
+//   res.sendFile("public/index.html");
+// });
 app.use(bodyParser.json());
 app.use(authenticationRoutes);
+
 
 
 const authStrategy = passport.authenticate("authStrategy", { session: false });
 app.use(authStrategy);
 app.use(listRoutes);
-app.use(articleRoutes);
+app.use(movieRoutes);
+
 
 app.use(function (err, req, res, next) {
   console.error(err.stack);

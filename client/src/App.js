@@ -108,7 +108,7 @@ class App extends Component {
     return (
       <div>
         <Switch>
-          <Route exact path="/create" component={CreatePostContainer} />
+          <Route exact path="/create/:id" component={CreatePostContainer} />
           <Route exact path="/" component={Main} />
           <Route exact path="/secret" component={Secret} />
           <Route render={() => <h1>NOT FOUND!</h1>} />
