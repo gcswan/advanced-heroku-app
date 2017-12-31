@@ -120,3 +120,18 @@
 .center-text {
   text-align: center;
 }
+
+.create-post-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  text-align:center;
+}
+
+.journal-text {
+  border: 1px solid black;
+  height: 300px;
+  width: 600px;
+
+}

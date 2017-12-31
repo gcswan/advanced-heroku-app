@@ -6,11 +6,9 @@ function searchResults(state = [], action){
     }
     return state;
 }
-function findMovie(array, movie){
-    array.find()
-}
+
+
 function myMovieList(state = [], action){
-    console.log("this is the myMovieList reducer logging the state of myMovieList: ", state)
     if(action.type === "MY_MOVIES_LOADED"){
         
         return [
