@@ -22,7 +22,7 @@ export function searchLoaded(movies){
 
 export function saveMovie(movie){
     return {
-        type: "MY_MOVIES_LOADED",
+        type: "SEARCH_RESULTS_LOADED",
         value: movie
     };
 }

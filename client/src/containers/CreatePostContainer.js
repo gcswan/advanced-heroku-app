@@ -5,7 +5,8 @@ import {createJournalEntry} from "../actions";
 
 function mapStateToProps(state){
     return {
-        myMovieList: state.myMovieList
+        myMovieList: state.myMovieList,
+        searchResults: state.searchResults
     };
 };
 function mapDispatchToProps(dispatch){

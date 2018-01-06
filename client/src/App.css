@@ -109,7 +109,7 @@
 
 .search-button {
   width: 15%;
-  height: 35px;
+  height: 60px;
   font-size: 20px;
   background-color: green;
   color: white;
@@ -124,14 +124,44 @@
 .create-post-container {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   text-align:center;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  
 }
 
 .journal-text {
   border: 1px solid black;
-  height: 300px;
-  width: 600px;
+  height: 50vh;
+  width: 95%;
 
+}
+.journal-movie-poster {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid black;
+  height: 20%;
+  width: 40%;
+
+}
+.movie-info-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 30%;
+  width: 100%;
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  
+}
+
+.text-area-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: bottom;
 }
