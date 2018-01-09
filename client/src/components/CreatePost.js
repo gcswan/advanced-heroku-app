@@ -31,9 +31,10 @@ class CreatePost extends Component {
         const movies = this.props.searchResults;
         const id = this.props.match.params.id;
         const foundMovie = movies.find((movie) => {if(movie.id == id){return movie}});
-        console.log("create post logging: ", foundMovie) 
         let backDrop = "http://image.tmdb.org/t/p/original" + foundMovie.backdrop_path;
-        
+        console.log("create post logging the id of the movie I want: ", id)
+        console.log("create post logging props: ", movies)
+        console.log("create post logging the found movie: ", foundMovie.overview)
         return (
 
             <div className="main-container">

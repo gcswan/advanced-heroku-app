@@ -27,7 +27,6 @@ class SearchItem extends Component {
         
         let movie = this.props.movie;
         let movieId = this.props.movie.id
-        console.log("SearchItem logging movieID: ",movieId)
         return (
             <div className="search-item">
                 {image()}

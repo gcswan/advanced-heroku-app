@@ -120,7 +120,6 @@ class App extends Component {
   }
 
   render() {
-    console.log("app component logging myMovieList: ", this.props.myMovieList)
     
     let whatToShow = "";
     if (this.state.authenticated) {

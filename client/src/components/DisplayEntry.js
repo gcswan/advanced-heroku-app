@@ -8,6 +8,7 @@ class DisplayEntry extends Component {
     
     
     render() {
+        // onClick={() => this.props.deleteMovie(movie._id)}
         const movies = this.props.myMovieList;
         const id = this.props.match.params.id;
         const foundMovie = movies.map((movie) => {
