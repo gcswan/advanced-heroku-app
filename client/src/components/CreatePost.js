@@ -31,17 +31,22 @@ class CreatePost extends Component {
         const movies = this.props.searchResults;
         const id = this.props.match.params.id;
         const foundMovie = movies.find((movie) => {if(movie.id == id){return movie}});
-        console.log("this is CreatePost logging the found movie prop: ", foundMovie);
-        
+        console.log("create post logging: ", foundMovie) 
         let backDrop = "http://image.tmdb.org/t/p/original" + foundMovie.backdrop_path;
         
         return (
 
             <div className="main-container">
                 <SideBarContainer className="side-bar-container" />
-                <div className="create-post-container" style={{backgroundImage: 'url(' + backDrop + ')'}}>
+                <div className="create-post-container">
                     <div className="movie-info-container">
-                        <h1>{foundMovie.title}</h1>
+                        <div className="found-movie-info">
+                            <h1>{foundMovie.title}</h1>
+                            <h4>TMDB rating: {foundMovie.vote_average}/10</h4>
+                        </div>
+                        <div className="journal-img-container">
+                            <img className="journal-movie-poster"src={backDrop} alt={foundMovie.original_title}></img>
+                        </div>
                     </div>
                     <div className="text-area-container">
                         <form onSubmit={this.handleSubmit.bind(this)}>
@@ -51,7 +56,7 @@ class CreatePost extends Component {
                                     movie: Object.assign(this.state.movie, jEntry)
                                 })
                             }}className="journal-text"></textarea>
-                            <button className="search-button">Create Journal Entry</button>
+                            <button className="create-entry-button">Create Journal Entry</button>
                         </form>
                     </div>
                 </div>

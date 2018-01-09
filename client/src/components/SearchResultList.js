@@ -12,7 +12,7 @@ class SearchResultList extends Component {
             } 
             return (<div key={title.id} />);
         }); 
-        console.log(this.props)
+        console.log("search bar props: ", this.props)
         
         return (
             <div className="title-list">

@@ -1,24 +1,29 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class SideBar extends Component {
-    componentWillMount(){
+    componentDidMount(){
         this.props.loadEntries();
     }
     
     render(){
-        console.log(" side bar myMovieList: ", this.props.myMovieList);
-        // const movies = this.props.myMovieList;
-        // const myMovies = movies.map((movie)=> {
-        //     return (
-        //         <h6 key={movie.id}>{movie.title}</h6>
-        //     )
-        // })
+
+        const movies = this.props.myMovieList;
+        const myMovies = movies.map((movie) => {
+            const id = movie._id
+            return (
+                <div key={movie.id} className="my-movie-list">
+                    <Link to={"/entry/" + id}>{movie.title}</Link>
+                </div>
+            )
+        })
        
+        
         return (
             <div className="side-bar-container">
                 <h3 className="center-text">My Movies</h3>
-                <div>
-                    test
+                <div> 
+                    {myMovies}
                 </div>
             </div>
         )  

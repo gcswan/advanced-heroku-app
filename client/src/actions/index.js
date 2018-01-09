@@ -46,11 +46,26 @@ export function loadEntries(){
     }
 };
 
-
-
-export function moviesLoaded(movies){
+export function moviesLoaded(movies){  
     return {
         type: "MY_MOVIES_LOADED",
-        value: movies 
+        value: movies
     }
 }
+
+
+export function deleteMovie(id){
+        return function(dispatch){
+            fetch("/api/movies/" + id, {
+                method: "DELETE"
+            }).then(() => dispatch(loadEntries()));
+        };
+    }
+
+// export function updateMovie(id){
+//     return function(dispatch){
+//         fetch("/api/movies/" + id, {
+//             method: ""
+//         })
+//     }
+// }

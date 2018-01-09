@@ -19,6 +19,7 @@ const TopNavbar = (props) => {
     <Navbar inverse collapseOnSelect>
       <Navbar.Collapse>
         <Nav pullRight>
+          <NavItem><Link to="/">Home</Link></NavItem>
           <NavItem onClick={props.onSignOut}>Sign Out</NavItem>
         </Nav>
         {navItems}

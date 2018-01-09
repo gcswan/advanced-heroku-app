@@ -7,6 +7,7 @@ import Secret from "./Secret";
 import MainSearchContainer from "./containers/MainSearchContainer";
 import Main from "./components/Main";
 import CreatePostContainer from "./containers/CreatePostContainer";
+import DisplayEntryContainer from "./containers/DisplayEntryContainer";
 
 
 
@@ -108,6 +109,7 @@ class App extends Component {
     return (
       <div>
         <Switch>
+          <Route exact path="/entry/:id" component={DisplayEntryContainer} />
           <Route exact path="/create/:id" component={CreatePostContainer} />
           <Route exact path="/" component={Main} />
           <Route exact path="/secret" component={Secret} />
