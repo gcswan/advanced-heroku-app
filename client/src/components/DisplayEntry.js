@@ -1,18 +1,27 @@
 import React, {Component} from "react";
 import SideBarContainer from "../containers/SideBarContainer";
+import {Redirect} from "react-router-dom";
 
 
 
 class DisplayEntry extends Component {
-  
-    
+    constructor(){
+        super();
+        this.state = {
+            redirect: false
+        }
+    }
+    handleClick(id){
+        this.props.deleteMovie(id);
+        this.setState({redirect: true});
+
+    }
     
     render() {
-        // onClick={() => this.props.deleteMovie(movie._id)}
         const movies = this.props.myMovieList;
         const id = this.props.match.params.id;
         const foundMovie = movies.map((movie) => {
-            if(movie._id === id){
+            if( movie._id === id || movie.id === id ){
                 return (
                     <div>
                         <div>
@@ -20,14 +29,16 @@ class DisplayEntry extends Component {
                             <p>{movie.jEntry}</p>
                         </div>
                         <div>
-                            <button onClick={() => this.props.deleteMovie(movie._id)}>Delete</button>
+                            <button onClick={()=>this.handleClick(movie._id)}>Delete</button>
                             <button>Edit</button>
                         </div>
                     </div>
                 )
             }
         });
-        console.log("Display component logging props: ", this.props)
+        if (this.state.redirect === true){
+            return <Redirect push to={'/'}/>
+        }
 
         return (
             <div className="main-container">

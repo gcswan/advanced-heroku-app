@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import SideBarContainer from "../containers/SideBarContainer";
+import { Link, Redirect } from "react-router-dom";
 
 
 
@@ -9,15 +10,17 @@ class CreatePost extends Component {
         this.state = {
             movie: {
                 stars: "",
-                jEntry: ""
+                jEntry: "",
+                redirect: false
             }
         }
     }
     
     handleSubmit(e){
         e.preventDefault()
+        const id = this.props.match.params.id;
         this.props.createJournalEntry(this.state.movie);
-        console.log(this.state.movie)
+        this.setState({redirect: true});
     }
     componentWillMount(){
         const movies = this.props.searchResults;
@@ -32,9 +35,9 @@ class CreatePost extends Component {
         const id = this.props.match.params.id;
         const foundMovie = movies.find((movie) => {if(movie.id == id){return movie}});
         let backDrop = "http://image.tmdb.org/t/p/original" + foundMovie.backdrop_path;
-        console.log("create post logging the id of the movie I want: ", id)
-        console.log("create post logging props: ", movies)
-        console.log("create post logging the found movie: ", foundMovie.overview)
+        if (this.state.redirect === true){
+            return <Redirect push to={"/entry/" + id}/>
+        }
         return (
 
             <div className="main-container">

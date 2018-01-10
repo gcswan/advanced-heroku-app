@@ -54,18 +54,18 @@ export function moviesLoaded(movies){
 }
 
 
-
+   
 
     export function deleteMovie(id){
         return function(dispatch){
             console.log("Delete movie is being called with the ID: ", id)
-            
-            window.fetch("/api/movies/" + id, {method: "DELETE"})
-            .then(response => {
-                console.log(response)
-                return response.json()
+            fetch('/api/movies/' + id + '/',{
+                method: "delete"
             })
-            .then(() => dispatch(loadEntries()))
+            .then(response => {
+                dispatch(loadEntries())
+                return response.json();
+            })
             .catch(err => console.log(err))
         }
     };
