@@ -20,6 +20,14 @@ export function searchLoaded(movies){
     };
 };
 
+export function clearSearchResults(){
+    const empty = []
+    return {
+        type: "SEARCH_RESULTS_LOADED",
+        value: empty
+    }
+}
+
 export function saveMovie(movie){
     return {
         type: "SEARCH_RESULTS_LOADED",

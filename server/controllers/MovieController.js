@@ -31,7 +31,7 @@ export function create(request, response) {
 
   export function remove(request, response) {
     let id = request.params.id;
-    console.log("remove controller logging id: ", id)
+    console.log("remove controller logging id: ", request)
     MovieModel.findByIdAndRemove(id).exec()
     .then((movie) => {
       return response.json(movie)

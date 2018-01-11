@@ -23,6 +23,8 @@ class App extends Component {
     this.handleSignUp = this.handleSignUp.bind(this);
   }
 
+  
+
   handleSignUp(credentials) {
     const { username, password, confirmPassword } = credentials;
     if (!username.trim() || !password.trim() ) {
@@ -93,6 +95,7 @@ class App extends Component {
     this.setState({
       authenticated: false
     });
+    this.props.clearSearchResults();
   }
 
   renderSignUpSignIn() {
@@ -118,6 +121,8 @@ class App extends Component {
       </div>
     );
   }
+  
+    
 
   render() {
     
@@ -127,7 +132,8 @@ class App extends Component {
     } else {
       whatToShow = this.renderSignUpSignIn();
     }
-       
+   
+     console.log(this.props)  
     return (
       <BrowserRouter>
         <div className="App">
