@@ -24,9 +24,9 @@ var _ListRoutes = require("./routes/ListRoutes");
 
 var _ListRoutes2 = _interopRequireDefault(_ListRoutes);
 
-var _ArticleRoutes = require("./routes/blog/ArticleRoutes");
+var _MovieRoutes = require("./routes/MovieRoutes");
 
-var _ArticleRoutes2 = _interopRequireDefault(_ArticleRoutes);
+var _MovieRoutes2 = _interopRequireDefault(_MovieRoutes);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -37,21 +37,21 @@ require("dotenv").config();
 
 _mongoose2.default.set("debug", true);
 _mongoose2.default.Promise = global.Promise;
+// mongoose.connect("mongodb://jwoo:jwoo@ds151451.mlab.com:51451/aca-test");
 _mongoose2.default.connect("mongodb://greg.swan:Radiohead1`@ds159866.mlab.com:59866/movie-journal");
-
 var app = (0, _express2.default)();
 app.use(_express2.default.static("public"));
 
-app.get("*", function (req, res, next) {
-  res.sendFile("public/index.html");
-});
+// app.get("*", (req, res, next) => {
+//   res.sendFile("public/index.html");
+// });
 app.use(_bodyParser2.default.json());
 app.use(_AuthenticationRoutes2.default);
 
 var authStrategy = _passport2.default.authenticate("authStrategy", { session: false });
 app.use(authStrategy);
 app.use(_ListRoutes2.default);
-app.use(_ArticleRoutes2.default);
+app.use(_MovieRoutes2.default);
 
 app.use(function (err, req, res, next) {
   console.error(err.stack);
