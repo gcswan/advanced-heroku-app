@@ -3,13 +3,15 @@ import MovieModel from "../models/MovieModel"
 
 export function create(request, response) {
     const movie = new MovieModel(request.body)
-    movie.save()
+    const movieWithUser = Object.assign(movie, {userId : request.user._id});
+    movieWithUser.save()
     .then((movie) => {
       return response.json(movie)
     });
   }
 
   export function show(request, response) {
+ 
     let id = request.params.id;
     MovieModel.findById(id).exec()
     .then((movie) => {
@@ -18,8 +20,11 @@ export function create(request, response) {
   }
 
   export function list(request, response) {
-    MovieModel.find({}).exec()
+    // console.log("this is the list controller logging the user's request id: ", request.user._id);
+    
+    MovieModel.find({userId: request.user._id}).exec()
     .then((movies) => {
+      console.log("this is the list controller logging the movies found: ", movies)
       return response.json(movies)
     });
   }

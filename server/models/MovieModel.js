@@ -2,14 +2,14 @@ import mongoose, { Schema } from "mongoose";
 
 
 const movieSchema = new Schema({
-    id: {
+    jEntry: {
         type: String,
         required: true
     },
-    title: {
+    stars: {
         type: String,
-        required: true
-      },
+        required: false
+    },
     release_date: {
         type: String,
         required: true
@@ -22,14 +22,19 @@ const movieSchema = new Schema({
         type: String,
         required: false
     },
-    jEntry: {
+    id: {
         type: String,
         required: true
     },
-    stars: {
+    title: {
+        type: String,
+        required: true
+      },
+    userId: {
         type: String,
         required: false
     }
+   
 }) 
 
 export default mongoose.model("Movie", movieSchema);
