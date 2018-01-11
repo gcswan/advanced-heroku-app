@@ -77,3 +77,11 @@ export function moviesLoaded(movies){
             .catch(err => console.log(err))
         }
     };
+
+    export function getUser(user){
+        console.log("getUSer action was called with: ", user)
+        return {
+           type: "GOT_USER",
+           value: user
+        }
+    }

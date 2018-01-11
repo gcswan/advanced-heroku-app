@@ -16,7 +16,8 @@ class App extends Component {
     super();
     this.state = {
       signUpSignInError: "",
-      authenticated: localStorage.getItem("token") || false
+      authenticated: localStorage.getItem("token") || false,
+      user: ""
     };
     this.handleSignIn = this.handleSignIn.bind(this);
     this.handleSignOut = this.handleSignOut.bind(this);
@@ -62,6 +63,10 @@ class App extends Component {
 
   handleSignIn(credentials) {
     const { username, password } = credentials;
+    this.setState({
+      user: credentials.username
+    })
+    
     if (!username.trim() || !password.trim() ) {
       this.setState({
         signUpSignInError: "Must Provide All Fields"
@@ -88,6 +93,7 @@ class App extends Component {
         });
       });
     }
+    
   }
 
   handleSignOut() {
@@ -122,10 +128,10 @@ class App extends Component {
     );
   }
   
-    
+ 
 
   render() {
-    
+    console.log("App logging state ", this.state.user)
     let whatToShow = "";
     if (this.state.authenticated) {
       whatToShow = this.renderApp();
@@ -133,11 +139,11 @@ class App extends Component {
       whatToShow = this.renderSignUpSignIn();
     }
    
-     console.log(this.props)  
     return (
       <BrowserRouter>
         <div className="App">
           <TopNavbar 
+            username={this.state.user}
             showNavItems={this.state.authenticated} 
             onSignOut={this.handleSignOut} />
           {whatToShow}

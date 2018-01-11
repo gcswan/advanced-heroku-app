@@ -15,6 +15,13 @@ function myMovieList(state = [], action){
     return state;
 }
 
+function user(state="", action){
+    if(action.type === "GOT_USER"){
+        return action.value
+    }
+    return state;
+}
+
 const rootReducer = combineReducers({searchResults, myMovieList});
 
 export default rootReducer;

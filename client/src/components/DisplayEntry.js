@@ -22,15 +22,24 @@ class DisplayEntry extends Component {
         const id = this.props.match.params.id;
         const foundMovie = movies.map((movie) => {
             if( movie._id === id || movie.id === id ){
+                let backDrop = "http://image.tmdb.org/t/p/original" + movie.backdrop_path;
+                
                 return (
                     <div>
-                        <div>
-                            <h1>{movie.title}</h1>
+                        <div className="display-movie-info">
+                            <div className="found-movie-info">
+                                <h1>{movie.title}</h1>
+                                <h4>TMDB rating: {movie.vote_average}/10</h4>
+                            </div>
+                            <div className="journal-img-container">
+                                <img className="journal-movie-poster"src={backDrop} alt={movie.original_title}></img>
+                            </div>
+                        </div>
+                        <div className="display-journal-entry">
                             <p>{movie.jEntry}</p>
                         </div>
-                        <div>
-                            <button onClick={()=>this.handleClick(movie._id)}>Delete</button>
-                            <button>Edit</button>
+                        <div className="display-delete-container">
+                            <button className="display-delete-button"onClick={()=>this.handleClick(movie._id)}>Delete</button>
                         </div>
                     </div>
                 )
@@ -42,10 +51,9 @@ class DisplayEntry extends Component {
 
         return (
             <div className="main-container">
-                <SideBarContainer/>
-                <div> 
+                <SideBarContainer className="side-bar-container"/>
+                <div className="display-entry-container"> 
                     {foundMovie}
-                    
                 </div>
             </div>
         );
